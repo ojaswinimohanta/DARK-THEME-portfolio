@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Theme website</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="hero">
+        <nav>
+            <img src="./dark theme icon/ojas-logo4-removebg-preview.png"  class="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Hire Me</a></li>
+            </ul>
+            <img src="./dark theme icon/moon.png" id="icon">
+        </nav>
+        <div class="info">
+            <h5>I'm<span>  Ojaswini</span></h5>
+            <p>This is my official portfolio website<br> to showcase my all works<br>
+                 related to web development and UI design.</p>
+            <a href="">Download Cv</a>
+       
+        <div class="img-box">
+            <img src="./dark theme icon/ovel_red-removebg-preview.png" class="back-img">
+            <img src="./dark theme icon/oju-removebg-preview.png" class="main-img">
+        </div>
+    </div>
+        <div class="social-links">
+            <a href=""><i class="fab fa-linkedin"></i></a>
+            <a href=""><i class="fab fa-facebook"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+    <script>
+        var icon=document.getElementById("icon");
+
+        if(localStorage.getItem("theme ")==null){
+            localStorage.setItem("theme","light");
+        }
+        let localData= localStorage.getItem("theme");
+        if(localData == "light"){
+            icon.src="./dark theme icon/moon.png";
+            document.body.classList.remove("dark-theme");
+        }
+        else if(localData == "dark"){
+            icon.src="./dark theme icon/sun.png";
+            document.body.classList.add("dark-theme");
+
+        }
+
+        icon.onclick=function(){
+            document.body.classList.toggle("dark-theme");
+            if(document.body.classList.contains("dark-theme")){
+                icon.src="./dark theme icon/sun.png";
+                localStorage.setItem("theme","dark");
+            }else{
+                icon.src="./dark theme icon/moon.png"
+                localStorage.setItem("theme","light");
+            }
+            }
+        
+    </script>
+    
+</body>
+</html>
+
